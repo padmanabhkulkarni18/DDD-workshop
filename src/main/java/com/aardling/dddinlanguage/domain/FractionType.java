@@ -1,2 +1,19 @@
-package com.aardling.dddinlanguage.domain;public enum FractionType {
+package com.aardling.dddinlanguage.domain;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+
+public enum FractionType {
+
+    GREEN_WASTE(0.10),
+    CONSTRUCTION_WASTE(0.15);
+
+    private final double pricePerKg;
+
+    FractionType(double pricePerKg){
+        this.pricePerKg = pricePerKg;
+    }
+
+    public double getPricePerKg(){
+        return pricePerKg;
+    }
 }

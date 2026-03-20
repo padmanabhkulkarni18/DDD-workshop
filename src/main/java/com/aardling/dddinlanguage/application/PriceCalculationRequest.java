@@ -1,5 +1,9 @@
 package com.aardling.dddinlanguage.application;
 
-public record PriceCalculationRequest(String date, String person_id, String visit_id) {
+import com.aardling.dddinlanguage.domain.DroppedFractions;
+
+import java.util.List;
+
+public record PriceCalculationRequest(String date, List<DroppedFractions> dropped_fractions, String person_id, String visit_id) {
 
 }
