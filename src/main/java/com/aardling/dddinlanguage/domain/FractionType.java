@@ -16,4 +16,13 @@ public enum FractionType {
     public double getPricePerKg(){
         return pricePerKg;
     }
+
+    @JsonCreator
+    public static FractionType fromString(String value) {
+        return switch (value.toLowerCase()){
+            case "green waste" -> GREEN_WASTE;
+            case "construction waste" -> CONSTRUCTION_WASTE;
+            default -> throw new IllegalArgumentException("Unknown fraction type"+ value);
+        };
+    }
 }

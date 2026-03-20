@@ -21,4 +21,23 @@ public class PriceTests {
     void pricesAreNotEqual() {
         assertNotEquals(new Price(0, Currency.EUR), new Price(1, Currency.EUR));
     }
+
+    @Test
+    void addPricesSuccessfully() {
+        Price p1 = new Price(10, Currency.EUR);
+        Price p2 = new Price(5, Currency.EUR);
+
+        Price result = p1.addPrice(p2);
+
+        assertEquals(new Price(15, Currency.EUR), result);
+    }
+
+
+    @Test
+    void zeroFactoryMethod() {
+        Price zero = Price.zero(Currency.EUR);
+
+        assertEquals(new Price(0, Currency.EUR), zero);
+    }
+
 }

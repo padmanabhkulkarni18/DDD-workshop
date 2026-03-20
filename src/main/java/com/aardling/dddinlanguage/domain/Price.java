@@ -11,10 +11,11 @@ public record Price(double amount, Currency currency) {
         }
     }
 
+    public static Price zero(Currency currency) {
+        return new Price(0, currency);
+    }
+
     public Price addPrice(Price other){
-        if(this.currency.equals(other.currency)){
-            throw new IllegalArgumentException("Currencies must match");
-        }
         return new Price(this.amount+ other.amount, this.currency);
     }
 }
