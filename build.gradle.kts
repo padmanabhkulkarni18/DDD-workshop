@@ -8,7 +8,7 @@ group = "com.aardling"
 version = "0.0.1-SNAPSHOT"
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_25
+	sourceCompatibility = JavaVersion.VERSION_21
 }
 
 repositories {
